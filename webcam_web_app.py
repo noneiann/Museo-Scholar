@@ -11,10 +11,10 @@ import io
 app = Flask(__name__)
 
 # Initialize YOLO model
-model = YOLO("model/v3_model/runs/detect/train3/weights/best.pt")
+model = YOLO()
 
 # Initialize Gemini (set your API key in environment variable)
-genai.configure(api_key='AIzaSyAvyhVkjz2s49JlZArksIkL7V2mqjXnpwg')
+genai.configure(api_key=os.getenv('API_KEY'))
 gemini_model = genai.GenerativeModel('gemini-2.5-flash')
 print(genai.list_models())
 # Global variables to store current frame and detections
