@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['golden_tara_of_agusan', 'malong', 'manunggul_jar']
+
+roboflow:
+  workspace: museoscholar
+  project: my-first-project-oj0bn
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/museoscholar/my-first-project-oj0bn/dataset/5
