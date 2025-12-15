@@ -7,11 +7,15 @@ import google.generativeai as genai
 import os
 from PIL import Image
 import io
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 
 # Initialize YOLO model
-model = YOLO()
+model = YOLO('model/v4_model/runs/detect/train/weights/best.pt')
 
 # Initialize Gemini (set your API key in environment variable)
 genai.configure(api_key=os.getenv('API_KEY'))
